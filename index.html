@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Music Website</title>
   <style>
     * {
@@ -12,11 +12,12 @@
     html, body {
       height: 100%;
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
+    /* Navigation tab buttons */
     .tablink {
-      background-color: #555;
+      background-color: #2c3e50;
       color: white;
       float: left;
       border: none;
@@ -25,63 +26,101 @@
       padding: 14px 16px;
       font-size: 17px;
       width: 25%;
+      transition: background-color 0.3s ease;
     }
 
     .tablink:hover {
-      background-color: #777;
+      background-color: #34495e;
     }
 
+    /* Tab content section */
     .tabcontent {
       display: none;
-      padding: 100px;
-      height: 100%;
-      color: whitesmoke;
+      padding: 60px 100px;
+      height: calc(100% - 70px);
+      overflow-y: auto;
+      color: #f8f8f8;
     }
 
-    #Home {background-color: red;}
-    #News {background-color: green;}
-    #Contact {background-color: blue;}
-    #About {background-color: orange;}
+    #Home { background-color: #e74c3c; }       /* Red */
+    #News { background-color: #27ae60; }       /* Green */
+    #Contact { background-color: #2980b9; }    /* Blue */
+    #About { background-color: #f39c12; }      /* Orange */
+
+    h1, h3 {
+      margin-top: 0;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #2c3e50;
+      color: #ccc;
+      padding: 10px;
+      font-size: 14px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
 
-  <h1>WELCOME TO MY WEBSITE</h1>
+  <h1 style="text-align: center; background-color: #1abc9c; color: white; padding: 20px 0; margin: 0;">
+    🎶 Welcome to My Music Website 🎶
+  </h1>
 
-  <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
-  <button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button>
-  <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
-  <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+  <!-- Navigation -->
+  <button class="tablink" onclick="openPage('Home', this, '#e74c3c')">Home</button>
+  <button class="tablink" onclick="openPage('News', this, '#27ae60')" id="defaultOpen">News</button>
+  <button class="tablink" onclick="openPage('Contact', this, '#2980b9')">Contact</button>
+  <button class="tablink" onclick="openPage('About', this, '#f39c12')">About</button>
 
+  <!-- Content Sections -->
   <div id="Home" class="tabcontent">
     <h3>Home</h3>
-    <p>This website concerns all the people that like music.</p>
-    <p>Here is where you can find music that makes you feel good.</p>
-    <p>We provide classical, jazz, pop, afrobeat, and more!</p>
-    <i>All content that makes you feel good is here.</i>
-
+    <p>This website is for music lovers of all kinds!</p>
+    <p>Enjoy classical, jazz, pop, afrobeat, and much more.</p>
+    <i>We provide good vibes and sounds that make you feel great 🎧</i>
+    
     <ol>
-      <li>Jazz - <a href="https://youtu.be/CaqETGKPhQY?si=tnxm564oSLVRVn1v">Listen</a></li>
-      <li>Pop - <a href="https://youtu.be/U0ZoqmyGJo8?si=Hsho24Y8e64Hew4s">Listen</a></li>
-      <li>Country - <a href="https://youtu.be/mRwq8A0PPS4?si=OohzEgSPPxKurYT5">Listen</a></li>
-      <li>Afrobeat - <a href="https://youtu.be/ZlYmwF-4Yt4?si=tuYjFYgsCGN4aPkz">Listen</a></li>
+      <li>Jazz – <a href="https://youtu.be/CaqETGKPhQY?si=tnxm564oSLVRVn1v" target="_blank">Listen here</a></li>
+      <li>Pop – <a href="https://youtu.be/U0ZoqmyGJo8?si=Hsho24Y8e64Hew4s" target="_blank">Listen here</a></li>
+      <li>Country – <a href="https://youtu.be/mRwq8A0PPS4?si=OohzEgSPPxKurYT5" target="_blank">Listen here</a></li>
+      <li>Afrobeat – <a href="https://youtu.be/ZlYmwF-4Yt4?si=tuYjFYgsCGN4aPkz" target="_blank">Listen here</a></li>
     </ol>
   </div>
 
   <div id="News" class="tabcontent">
     <h3>News</h3>
-    <p>Some news this fine day!</p> 
+    <p>🎤 New albums coming this summer!</p>
+    <p>Stay tuned for artist interviews and live sessions.</p>
   </div>
 
   <div id="Contact" class="tabcontent">
     <h3>Contact</h3>
-    <p>Get in touch, or swing by for a cup of coffee.</p>
+    <p>Email:izabayopatrick24@gmail.com</p>
+    <p>Follow us on social media youtube,instagram and facebook @patrick24</p>
   </div>
 
   <div id="About" class="tabcontent">
     <h3>About</h3>
-    <p>Who we are and what we do.</p>
+    <p>We are passionate about music and want to share it with the world.</p>
+    <p>From smooth jazz to bouncy beats, we bring the groove to your day.</p>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 PATRICK IZABAYO IRAGUHA. All rights reserved.
+  </footer>
 
   <script>
     function openPage(pageName, elmnt, color) {
@@ -90,16 +129,20 @@
       for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
       }
+
       tablinks = document.getElementsByClassName("tablink");
       for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].style.backgroundColor = "";
+        tablinks[i].style.backgroundColor = "#2c3e50";
       }
+
       document.getElementById(pageName).style.display = "block";
       elmnt.style.backgroundColor = color;
     }
 
+    // Auto-click the default tab
     document.getElementById("defaultOpen").click();
   </script>
 
 </body>
 </html>
+ 
