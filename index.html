@@ -6,7 +6,7 @@
   <title>My Music Website 🎶</title>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    /* (Your CSS remains unchanged) */
+    /* Your existing CSS */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { 
       height: 100%; 
@@ -252,6 +252,59 @@
     document.getElementById("defaultOpen").click();
   </script>
 
+  <script>
+    function showGenreDescription() {
+      var genre = document.getElementById("genreSelect").value;
+      var genreDesc = document.getElementById("genreDesc");
+      var genreTitle = document.getElementById("genreTitle");
+      var genreDescription = document.getElementById("genreDescription");
+      var genreLink = document.getElementById("genreLink");
+
+      if (genre === "gospel") {
+        genreDesc.style.display = "block";
+        genreTitle.textContent = "Gospel";
+        genreDescription.textContent = "Gospel music is a genre of Christian music that is characterized by its religious and spiritual lyrics. Its origin can be traced back to the 17th century in African American church services.";
+        genreLink.href = "https://youtu.be/YQjPuIrR0Dk?si=MY9OC6pMFWfK30sB";  // Replace with appropriate YouTube link
+      } else if (genre === "pop") {
+        genreDesc.style.display = "block";
+        genreTitle.textContent = "Pop";
+        genreDescription.textContent = "Pop music is popular music that originated in the mid-20th century. It is characterized by catchy melodies, upbeat rhythms, and simple song structures.";
+        genreLink.href = "https://youtu.be/JGwWNGJdvx8?si=GT02-cETcnoff5CH";  // Example link
+      } else if (genre === "rock") {
+        genreDesc.style.display = "block";
+        genreTitle.textContent = "Rock";
+        genreDescription.textContent = "Rock music originated in the 1950s and evolved from earlier genres like rhythm and blues. It features electric guitars, strong rhythms, and often rebellious themes.";
+        genreLink.href = "https://youtu.be/kXYiU_JCYtU?si=-yeBMdDfbmHpfkOG";  // Replace with YouTube link
+      } else if (genre === "jazz") {
+        genreDesc.style.display = "block";
+        genreTitle.textContent = "Jazz";
+        genreDescription.textContent = "Jazz is a genre of music that originated in the early 20th century in the African American communities of New Orleans. It features improvisation and a complex rhythm structure.";
+        genreLink.href = "https://youtu.be/ZZcuSBouhVA?si=LCIvxG73SevkYumL";  // Example link
+      } else if (genre === "hiphop") {
+        genreDesc.style.display = "block";
+        genreTitle.textContent = "Hip Hop";
+        genreDescription.textContent = "Hip hop is a cultural movement and music genre that originated in the 1970s in the Bronx, New York. It involves rhythmic vocal delivery (rapping), breakdancing, and graffiti.";
+        genreLink.href = "https://youtu.be/begbi44ZLqw?si=WGz5gdCc5ELMQlhM";  // Replace with YouTube link
+      } else if (genre === "afrobeat") {
+        genreDesc.style.display = "block";
+        genreTitle.textContent = "Afrobeat";
+        genreDescription.textContent = "Afrobeat is a genre of music that combines traditional African rhythms with jazz, funk, and highlife. It was pioneered by Nigerian musician Fela Kuti in the late 1960s.";
+        genreLink.href = "https://youtu.be/helEv0kGHd4?si=fEeedvm2Fh8fCQbY";  // Example link
+      } else if (genre === "classical") {
+        genreDesc.style.display = "block";
+        genreTitle.textContent = "Classical";
+        genreDescription.textContent = "Classical music is a broad term that refers to a long tradition of music composed primarily in Europe. It is known for its structured compositions and use of orchestral instruments.";
+        genreLink.href = "https://youtu.be/T_Dy9OvgjHY?si=0ov4aPfdoatFlCYd";  // Replace with YouTube link
+      } else if (genre === "electronic") {
+        genreDesc.style.display = "block";
+        genreTitle.textContent = "Electronic";
+        genreDescription.textContent = "Electronic music is a genre that involves the use of electronic devices to create music. It emerged in the early 20th century and has since become a staple in club and dance culture.";
+        genreLink.href = "https://youtu.be/Z92JGegBYm0?si=dUx85ahfgCwylPUk";  // Example link
+      } else {
+        genreDesc.style.display = "none";
+      }
+    }
+  </script>
+
 </body>
 </html>
-
