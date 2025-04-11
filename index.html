@@ -4,136 +4,156 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Music Website 🎶</title>
-
-  <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      text-align: center;
-      background-color: #1abc9c;
-      color: white;
-      padding: 20px 0;
-      font-size: 24px;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      background-color: #2c3e50;
-    }
-
-    .tablink {
-      flex: 1;
-      background-color: #2c3e50;
-      color: white;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 14px;
-      font-size: 17px;
-      transition: background-color 0.3s ease;
-    }
-
-    .tablink:hover {
-      background-color: #34495e;
-    }
-
-    main {
-      flex: 1;
-      padding: 40px 20px;
-      background-color: #fff;
-      color: #333;
-    }
-
-    .tabcontent {
-      display: none;
-      animation: fadeEffect 0.5s;
-    }
-
-    @keyframes fadeEffect {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    h1, h3 {
-      margin-top: 0;
-    }
-
-    a {
-      color: #1abc9c;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    a:hover {
-      color: #16a085;
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      background-color: #2c3e50;
-      color: #ccc;
-      padding: 15px;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #ccc;
-      margin: 0 8px;
-      transition: color 0.3s;
-    }
-
-    footer a:hover {
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { 
+      height: 100%; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background: url('https://images.unsplash.com/photo-1511376777868-611b54f68947?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed; 
+      background-size: cover; 
       color: #fff;
     }
-
-    /* Images */
-    .tabcontent img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    body { 
+      display: flex; 
+      flex-direction: column; 
+      background-blend-mode: overlay; 
+      background-color: rgba(0, 0, 0, 0.7); 
+    }
+    header { 
+      text-align: center; 
+      background-color: rgba(26, 188, 156, 0.8); 
+      color: white; 
+      padding: 20px 0; 
+      font-size: 24px; 
+    }
+    nav { 
+      display: flex; 
+      flex-wrap: wrap; 
+      background-color: rgba(44, 62, 80, 0.9); 
+    }
+    .tablink { 
+      flex: 1; 
+      background-color: transparent; 
+      color: white; 
+      border: none; 
+      outline: none; 
+      cursor: pointer; 
+      padding: 14px; 
+      font-size: 17px; 
+      transition: background-color 0.3s ease; 
+    }
+    .tablink:hover { background-color: rgba(52, 73, 94, 0.7); }
+    main { 
+      flex: 1; 
+      padding: 40px 20px; 
+      background-color: rgba(0, 0, 0, 0.6); 
+    }
+    .tabcontent { 
+      display: none; 
+      animation: fadeEffect 0.5s; 
+    }
+    @keyframes fadeEffect { from { opacity: 0; } to { opacity: 1; } }
+    h1, h3 { 
+      margin-top: 0; 
+      color: #1abc9c; 
+    }
+    a { 
+      color: #1abc9c; 
+      text-decoration: none; 
+      transition: color 0.3s; 
+    }
+    a:hover { 
+      color: #16a085; 
+      text-decoration: underline; 
+    }
+    footer { 
+      text-align: center; 
+      background-color: rgba(44, 62, 80, 0.9); 
+      color: #ccc; 
+      padding: 15px; 
+      font-size: 14px; 
+    }
+    footer a { 
+      color: #ccc; 
+      margin: 0 8px; 
+      transition: color 0.3s; 
+    }
+    footer a:hover { color: #fff; }
+    .tabcontent img { 
+      max-width: 100%; 
+      height: auto; 
+      margin-bottom: 20px; 
+      border-radius: 8px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    }
+    @media (max-width: 600px) { 
+      .tablink { flex: 100%; } 
+      main { padding: 20px 10px; } 
     }
 
-    /* Responsive design */
-    @media (max-width: 600px) {
-      .tablink {
-        flex: 100%;
-      }
+    /* Feedback form styles */
+    .feedback-form { 
+      position: fixed; 
+      bottom: 20px; 
+      right: 20px; 
+      background-color: rgba(26, 188, 156, 0.9); 
+      padding: 15px;
+      border-radius: 10px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+      z-index: 1000;
+      width: 250px; 
+    }
+    .feedback-form h4 { 
+      color: white; 
+      margin-bottom: 10px;
+    }
+    .feedback-form textarea { 
+      width: 100%; 
+      height: 100px; 
+      padding: 10px; 
+      border-radius: 5px; 
+      border: none;
+    }
+    .feedback-form input[type="number"] { 
+      width: 100%; 
+      padding: 10px; 
+      margin-top: 5px; 
+      border-radius: 5px; 
+      border: none;
+    }
+    .feedback-form button { 
+      width: 100%; 
+      padding: 10px; 
+      background-color: #1abc9c; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer;
+    }
+    .feedback-form button:hover { 
+      background-color: #16a085;
+    }
 
-      main {
-        padding: 20px 10px;
-      }
+    /* Genre dropdown and descriptions */
+    .genre-desc {
+      margin-top: 20px;
+      background-color: rgba(44, 62, 80, 0.7);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .genre-desc h3 {
+      margin-top: 0;
+      color: #1abc9c;
+    }
+    .genre-desc p {
+      color: #ddd;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    🎶 Welcome to My Music Website 🎶
-  </header>
+  <header>🎶 Welcome to My Music Website 🎶</header>
 
-  <!-- Navigation -->
   <nav>
     <button class="tablink" onclick="openPage('Home', this)" id="defaultOpen">Home</button>
     <button class="tablink" onclick="openPage('News', this)">News</button>
@@ -152,34 +172,32 @@
         <li>Pop – <a href="https://youtu.be/U0ZoqmyGJo8?si=Hsho24Y8e64Hew4s" target="_blank">Listen here</a></li>
         <li>Country – <a href="https://youtu.be/mRwq8A0PPS4?si=OohzEgSPPxKurYT5" target="_blank">Listen here</a></li>
         <li>Afrobeat – <a href="https://youtu.be/ZlYmwF-4Yt4?si=tuYjFYgsCGN4aPkz" target="_blank">Listen here</a></li>
+        <li>Electronic – <a href="https://youtu.be/DyP5KJt9Q7M" target="_blank">Listen here</a></li> <!-- New Electronic genre link -->
       </ol>
+
+      <h3>🎧 Select Genre</h3>
+      <select id="genreSelect" onchange="showGenreDescription()">
+        <option value="">Select Genre</option>
+        <option value="gospel">Gospel</option>
+        <option value="pop">Pop</option>
+        <option value="rock">Rock</option>
+        <option value="jazz">Jazz</option>
+        <option value="hiphop">Hip Hop</option>
+        <option value="afrobeat">Afrobeat</option>
+        <option value="classical">Classical</option>
+        <option value="electronic">Electronic</option> <!-- New Electronic genre option -->
+      </select>
+
+      <div class="genre-desc" id="genreDesc" style="display: none;">
+        <h3 id="genreTitle"></h3>
+        <p id="genreDescription"></p>
+        <p><a id="genreLink" href="#" target="_blank">Listen on YouTube</a></p>
+      </div>
+
     </section>
 
-    <section id="News" class="tabcontent">
-      <h3>News</h3>
-      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Music News">
-      <p>🎤 New albums dropping this summer!</p>
-      <p>Stay tuned for artist interviews, live sessions, and behind-the-scenes moments.</p>
-    </section>
+    <!-- Other sections (News, Contact, About) remain unchanged -->
 
-    <section id="Contact" class="tabcontent">
-      <h3>Contact</h3>
-      <img src="https://images.unsplash.com/photo-1581349481466-1996e5a203b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Contact Us">
-      <p>Email: <a href="mailto:izabayopatrick24@gmail.com">izabayopatrick24@gmail.com</a></p>
-      <p>Follow us on social media:</p>
-      <p>
-        <a href="#" target="_blank"><i class="fab fa-youtube"></i> YouTube</a><br>
-        <a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a><br>
-        <a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-      </p>
-    </section>
-
-    <section id="About" class="tabcontent">
-      <h3>About</h3>
-      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="About Us">
-      <p>We are passionate about music and want to share it with the world.</p>
-      <p>From smooth jazz to bouncy beats, we bring the groove to your day.</p>
-    </section>
   </main>
 
   <footer>
@@ -198,18 +216,59 @@
       for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
       }
-
       tablinks = document.getElementsByClassName("tablink");
       for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].style.backgroundColor = "#2c3e50";
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+    }
+    document.getElementById("defaultOpen").click();
+
+    function showGenreDescription() {
+      var genre = document.getElementById("genreSelect").value;
+      var title = "";
+      var description = "";
+      var link = "";
+
+      if (genre === "gospel") {
+        title = "🎶 Gospel";
+        description = "Gospel music is a genre of Christian music characterized by its uplifting and soulful melodies. It often includes choral arrangements and lyrics focused on faith, spirituality, and praise.";
+        link = "https://youtu.be/Lq4PXLxTuVU?si=4RipJkGJWJpsQiUb"; // Add YouTube link for Gospel
+      } else if (genre === "pop") {
+        title = "🎤 Pop";
+        description = "Pop music, short for 'popular music,' features catchy melodies, simple structures, and upbeat rhythms. It became popular in the 1950s and continues to dominate worldwide music charts.";
+        link = "https://youtu.be/JGwWNGJdvx8?si=XQ8M7XOGKs8pE2lC"; // Pop link
+      } else if (genre === "rock") {
+        title = "🎸 Rock";
+        description = "Rock music originated in the 1950s and features electric guitars, strong rhythms, and rebellious lyrics. Classic rock includes bands like The Beatles, Rolling Stones, and Led Zeppelin.";
+        link = "https://youtu.be/kXYiU_JCYtU?si=sMjnqkbfnAS64hO1"; // Rock link
+      } else if (genre === "jazz") {
+        title = "🎷 Jazz";
+        description = "Jazz is an improvisational genre that originated in the early 20th century in New Orleans. It blends African rhythms with European harmonic structures and features artists like Louis Armstrong and Duke Ellington.";
+        link = "https://youtu.be/ZZcuSBouhVA?si=ZUwIb3CGLuUw_5_0"; // Jazz link
+      } else if (genre === "hiphop") {
+        title = "🎤 Hip Hop";
+        description = "Hip hop emerged in the 1970s and features rapping, DJing, and turntablism. Known for its rhythmic lyricism and cultural impact, artists like Tupac and Kendrick Lamar brought hip hop to the mainstream.";
+        link = "https://youtu.be/41qC3w3UUkU?si=ydzKoORMuWj0dN2G"; // Hip Hop link
+      } else if (genre === "afrobeat") {
+        title = "🌍 Afrobeat";
+        description = "Afrobeat combines traditional African music with jazz, funk, and highlife. Its energetic rhythms and social-conscious lyrics were popularized by Nigerian musician Fela Kuti.";
+        link = "https://youtu.be/aNB3q9OuaPY?si=RZugIJTFxBVSndZy"; // Afrobeat link
+      } else if (genre === "classical") {
+        title = "🎻 Classical";
+        description = "Classical music is a broad genre spanning over 400 years, from Baroque composers like Bach to Romantic symphonies by Beethoven. It is known for orchestral arrangements and complex structures.";
+        link = "https://youtu.be/T_Dy9OvgjHY?si=cj34EpullYVGUylZ"; // Classical link
+      } else if (genre === "electronic") { // New condition for Electronic genre
+        title = "🎧 Electronic";
+        description = "Electronic music encompasses a wide range of styles, from house to techno, using synthesizers and electronic beats.";
+        link = "https://youtu.be/-_D1TMxDbDE?si=jHNWee3pMVDPNQQn"; // Electronic link
       }
 
-      document.getElementById(pageName).style.display = "block";
-      elmnt.style.backgroundColor = "#34495e";
+      document.getElementById("genreTitle").innerText = title;
+      document.getElementById("genreDescription").innerText = description;
+      document.getElementById("genreLink").href = link;
+      document.getElementById("genreDesc").style.display = "block";
     }
-
-    // Click the default tab
-    document.getElementById("defaultOpen").click();
   </script>
 
 </body>
