@@ -1,3 +1,4 @@
+<!-- Full HTML with all genres and correct links -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,127 +7,93 @@
   <title>My Music Website 🎶</title>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    /* Your existing CSS */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { 
-      height: 100%; 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-      background: url('https://images.unsplash.com/photo-1511376777868-611b54f68947?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed; 
-      background-size: cover; 
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1511376777868-611b54f68947?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
     }
-    body { 
-      display: flex; 
-      flex-direction: column; 
-      background-blend-mode: overlay; 
-      background-color: rgba(0, 0, 0, 0.7); 
+    body {
+      display: flex;
+      flex-direction: column;
+      background-blend-mode: overlay;
+      background-color: rgba(0, 0, 0, 0.7);
     }
-    header { 
-      text-align: center; 
-      background-color: rgba(26, 188, 156, 0.8); 
-      color: white; 
-      padding: 20px 0; 
-      font-size: 24px; 
+    header {
+      text-align: center;
+      background-color: rgba(26, 188, 156, 0.8);
+      color: white;
+      padding: 20px 0;
+      font-size: 24px;
     }
-    nav { 
-      display: flex; 
-      flex-wrap: wrap; 
-      background-color: rgba(44, 62, 80, 0.9); 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: rgba(44, 62, 80, 0.9);
     }
-    .tablink { 
-      flex: 1; 
-      text-align: center; 
-      min-width: 100px; 
-      background-color: transparent; 
-      color: white; 
-      border: none; 
-      outline: none; 
-      cursor: pointer; 
-      padding: 14px; 
-      font-size: 17px; 
-      transition: background-color 0.3s ease; 
+    .tablink {
+      flex: 1;
+      text-align: center;
+      min-width: 100px;
+      background-color: transparent;
+      color: white;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px;
+      font-size: 17px;
+      transition: background-color 0.3s ease;
     }
     .tablink:hover { background-color: rgba(52, 73, 94, 0.7); }
-    main { 
-      flex: 1; 
-      padding: 40px 20px; 
-      background-color: rgba(0, 0, 0, 0.6); 
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.6);
     }
-    .tabcontent { 
-      display: none; 
-      animation: fadeEffect 0.5s; 
+    .tabcontent {
+      display: none;
+      animation: fadeEffect 0.5s;
     }
     @keyframes fadeEffect { from { opacity: 0; } to { opacity: 1; } }
-    h1, h3 { 
-      margin-top: 0; 
-      color: #1abc9c; 
+    h1, h3 {
+      margin-top: 0;
+      color: #1abc9c;
     }
-    a { 
-      color: #1abc9c; 
-      text-decoration: none; 
-      transition: color 0.3s; 
+    a {
+      color: #1abc9c;
+      text-decoration: none;
+      transition: color 0.3s;
     }
-    a:hover { 
-      color: #16a085; 
-      text-decoration: underline; 
+    a:hover {
+      color: #16a085;
+      text-decoration: underline;
     }
-    footer { 
-      text-align: center; 
-      background-color: rgba(44, 62, 80, 0.9); 
-      color: #ccc; 
-      padding: 15px; 
-      font-size: 14px; 
+    footer {
+      text-align: center;
+      background-color: rgba(44, 62, 80, 0.9);
+      color: #ccc;
+      padding: 15px;
+      font-size: 14px;
     }
-    footer a { 
-      color: #ccc; 
-      margin: 0 8px; 
-      transition: color 0.3s; 
+    footer a {
+      color: #ccc;
+      margin: 0 8px;
+      transition: color 0.3s;
     }
     footer a:hover { color: #fff; }
-    .tabcontent img { 
-      max-width: 100%; 
-      height: auto; 
-      margin-bottom: 20px; 
-      border-radius: 8px; 
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    .tabcontent img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     }
-    @media (max-width: 600px) { 
-      .tablink { flex: 100%; font-size: 14px; } 
-      main { padding: 20px 10px; } 
-      footer { font-size: 12px; } 
-    }
-    .feedback-form { 
-      position: fixed; 
-      bottom: 20px; 
-      right: 20px; 
-      background-color: rgba(26, 188, 156, 0.9); 
-      padding: 15px;
-      border-radius: 10px; 
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-      z-index: 1000;
-      width: 250px; 
-    }
-    .feedback-form h4 { 
-      color: white; 
-      margin-bottom: 10px;
-    }
-    .feedback-form textarea, .feedback-form input[type="number"] { 
-      width: 100%; 
-      padding: 10px; 
-      margin-top: 5px; 
-      border-radius: 5px; 
-      border: none;
-    }
-    .feedback-form button { 
-      width: 100%; 
-      padding: 10px; 
-      background-color: #1abc9c; 
-      border: none; 
-      border-radius: 5px; 
-      cursor: pointer;
-    }
-    .feedback-form button:hover { 
-      background-color: #16a085;
+    @media (max-width: 600px) {
+      .tablink { flex: 100%; font-size: 14px; }
+      main { padding: 20px 10px; }
+      footer { font-size: 12px; }
     }
     .genre-desc {
       margin-top: 20px;
@@ -134,13 +101,8 @@
       padding: 15px;
       border-radius: 8px;
     }
-    .genre-desc h3 {
-      margin-top: 0;
-      color: #1abc9c;
-    }
-    .genre-desc p {
-      color: #ddd;
-    }
+    .genre-desc h3 { margin-top: 0; color: #1abc9c; }
+    .genre-desc p { color: #ddd; }
   </style>
 </head>
 <body>
@@ -152,6 +114,7 @@
     <button class="tablink" onclick="openPage('News', this)">News</button>
     <button class="tablink" onclick="openPage('Contact', this)">Contact</button>
     <button class="tablink" onclick="openPage('About', this)">About</button>
+    <button class="tablink" onclick="openPage('Feedback', this)">Feedback</button>
   </nav>
 
   <main>
@@ -195,7 +158,7 @@
         <li><strong>🚀 Playlist Update:</strong> Our Afrobeat and Jazz playlists have been refreshed with the latest hits. Don’t miss out on the newest tracks.</li>
         <li><strong>🛠️ Website Improvements:</strong> Enjoy faster loading times and a smoother user experience, thanks to our recent backend optimizations.</li>
         <li><strong>📅 Upcoming Event:</strong> Stay tuned for our virtual music festival happening this summer! 🎶 Details coming soon.</li>
-        <li><strong>💌 Feedback Form Live:</strong> Share your thoughts with us using our new feedback form at the bottom-right corner of the page!</li>
+        <li><strong>💌 Feedback Form Live:</strong> Share your thoughts with us using our new feedback form in the Feedback tab!</li>
       </ul>
     </section>
 
@@ -219,21 +182,22 @@
         <li>Create a community where music lovers can connect and share their passions.</li>
       </ul>
     </section>
+
+    <section id="Feedback" class="tabcontent">
+      <h3>Give Us Your Feedback!</h3>
+      <form action="https://formspree.io/f/xjkylbwb" method="POST" style="max-width: 500px;">
+        <textarea name="feedback" placeholder="Your feedback..." rows="4" required style="width: 100%; padding: 10px; border-radius: 5px; border: none;"></textarea>
+        <br><br>
+        <input type="number" name="rating" min="1" max="5" placeholder="Rate us (1-5)" required style="width: 100%; padding: 10px; border-radius: 5px; border: none;" />
+        <br><br>
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #1abc9c; border: none; border-radius: 5px; cursor: pointer; color: white;">Submit Feedback</button>
+      </form>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 IRAGUHA IZABAYO Patrick. All rights reserved.</p>
   </footer>
-
-  <!-- Feedback Form -->
-  <div class="feedback-form">
-    <h4>Give Us Your Feedback!</h4>
-    <form action="https://formspree.io/f/xjkylbwb" method="POST">
-      <textarea name="feedback" placeholder="Your feedback..." rows="4" required></textarea>
-      <input type="number" name="rating" min="1" max="5" placeholder="Rate us (1-5)" required />
-      <button type="submit">Submit Feedback</button>
-    </form>
-  </div>
 
   <script>
     function openPage(pageName, elmnt) {
@@ -250,58 +214,64 @@
       elmnt.style.backgroundColor = '#1abc9c';
     }
     document.getElementById("defaultOpen").click();
-  </script>
 
-  <script>
     function showGenreDescription() {
-      var genre = document.getElementById("genreSelect").value;
-      var genreDesc = document.getElementById("genreDesc");
-      var genreTitle = document.getElementById("genreTitle");
-      var genreDescription = document.getElementById("genreDescription");
-      var genreLink = document.getElementById("genreLink");
+      const genre = document.getElementById("genreSelect").value;
+      const desc = document.getElementById("genreDesc");
+      const title = document.getElementById("genreTitle");
+      const description = document.getElementById("genreDescription");
+      const link = document.getElementById("genreLink");
 
-      if (genre === "gospel") {
-        genreDesc.style.display = "block";
-        genreTitle.textContent = "Gospel";
-        genreDescription.textContent = "Gospel music is a genre of Christian music that is characterized by its religious and spiritual lyrics. Its origin can be traced back to the 17th century in African American church services.";
-        genreLink.href = "https://youtu.be/YQjPuIrR0Dk?si=MY9OC6pMFWfK30sB";  // Replace with appropriate YouTube link
-      } else if (genre === "pop") {
-        genreDesc.style.display = "block";
-        genreTitle.textContent = "Pop";
-        genreDescription.textContent = "Pop music is popular music that originated in the mid-20th century. It is characterized by catchy melodies, upbeat rhythms, and simple song structures.";
-        genreLink.href = "https://youtu.be/JGwWNGJdvx8?si=GT02-cETcnoff5CH";  // Example link
-      } else if (genre === "rock") {
-        genreDesc.style.display = "block";
-        genreTitle.textContent = "Rock";
-        genreDescription.textContent = "Rock music originated in the 1950s and evolved from earlier genres like rhythm and blues. It features electric guitars, strong rhythms, and often rebellious themes.";
-        genreLink.href = "https://youtu.be/kXYiU_JCYtU?si=-yeBMdDfbmHpfkOG";  // Replace with YouTube link
-      } else if (genre === "jazz") {
-        genreDesc.style.display = "block";
-        genreTitle.textContent = "Jazz";
-        genreDescription.textContent = "Jazz is a genre of music that originated in the early 20th century in the African American communities of New Orleans. It features improvisation and a complex rhythm structure.";
-        genreLink.href = "https://youtu.be/ZZcuSBouhVA?si=LCIvxG73SevkYumL";  // Example link
-      } else if (genre === "hiphop") {
-        genreDesc.style.display = "block";
-        genreTitle.textContent = "Hip Hop";
-        genreDescription.textContent = "Hip hop is a cultural movement and music genre that originated in the 1970s in the Bronx, New York. It involves rhythmic vocal delivery (rapping), breakdancing, and graffiti.";
-        genreLink.href = "https://youtu.be/begbi44ZLqw?si=WGz5gdCc5ELMQlhM";  // Replace with YouTube link
-      } else if (genre === "afrobeat") {
-        genreDesc.style.display = "block";
-        genreTitle.textContent = "Afrobeat";
-        genreDescription.textContent = "Afrobeat is a genre of music that combines traditional African rhythms with jazz, funk, and highlife. It was pioneered by Nigerian musician Fela Kuti in the late 1960s.";
-        genreLink.href = "https://youtu.be/helEv0kGHd4?si=fEeedvm2Fh8fCQbY";  // Example link
-      } else if (genre === "classical") {
-        genreDesc.style.display = "block";
-        genreTitle.textContent = "Classical";
-        genreDescription.textContent = "Classical music is a broad term that refers to a long tradition of music composed primarily in Europe. It is known for its structured compositions and use of orchestral instruments.";
-        genreLink.href = "https://youtu.be/T_Dy9OvgjHY?si=0ov4aPfdoatFlCYd";  // Replace with YouTube link
-      } else if (genre === "electronic") {
-        genreDesc.style.display = "block";
-        genreTitle.textContent = "Electronic";
-        genreDescription.textContent = "Electronic music is a genre that involves the use of electronic devices to create music. It emerged in the early 20th century and has since become a staple in club and dance culture.";
-        genreLink.href = "https://youtu.be/Z92JGegBYm0?si=dUx85ahfgCwylPUk";  // Example link
+      const genres = {
+        gospel: {
+          title: "Gospel",
+          text: "Gospel music is a genre of Christian music that is characterized by its religious and spiritual lyrics...",
+          url: "https://youtu.be/YQjPuIrR0Dk?si=MY9OC6pMFWfK30sB"
+        },
+        pop: {
+          title: "Pop",
+          text: "Pop music is popular music that originated in the mid-20th century...",
+          url: "https://youtu.be/JGwWNGJdvx8?si=GT02-cETcnoff5CH"
+        },
+        rock: {
+          title: "Rock",
+          text: "Rock music originated in the 1950s and evolved from earlier genres like rhythm and blues...",
+          url: "https://youtu.be/kXYiU_JCYtU?si=-yeBMdDfbmHpfkOG"
+        },
+        jazz: {
+          title: "Jazz",
+          text: "Jazz is a genre of music that originated in the early 20th century in New Orleans...",
+          url: "https://youtu.be/ZZcuSBouhVA?si=LCIvxG73SevkYumL"
+        },
+        hiphop: {
+          title: "Hip Hop",
+          text: "Hip hop is a cultural movement and music genre that originated in the 1970s in the Bronx...",
+          url: "https://youtu.be/begbi44ZLqw?si=WGz5gdCc5ELMQlhM"
+        },
+        afrobeat: {
+          title: "Afrobeat",
+          text: "Afrobeat combines traditional African rhythms with jazz, funk, and highlife...",
+          url: "https://youtu.be/helEv0kGHd4?si=fEeedvm2Fh8fCQbY"
+        },
+        classical: {
+          title: "Classical",
+          text: "Classical music refers to a long tradition of music composed in Europe...",
+          url: "https://youtu.be/T_Dy9OvgjHY?si=0ov4aPfdoatFlCYd"
+        },
+        electronic: {
+          title: "Electronic",
+          text: "Electronic music uses electronic devices to create music...",
+          url: "https://youtu.be/Z92JGegBYm0?si=dUx85ahfgCwylPUk"
+        }
+      };
+
+      if (genres[genre]) {
+        desc.style.display = "block";
+        title.textContent = genres[genre].title;
+        description.textContent = genres[genre].text;
+        link.href = genres[genre].url;
       } else {
-        genreDesc.style.display = "none";
+        desc.style.display = "none";
       }
     }
   </script>
