@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://24patrick244.github.io/good_music/sitemap.xml
 
